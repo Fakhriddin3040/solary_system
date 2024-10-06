@@ -14,13 +14,6 @@ COPY . .
 
 COPY .env.example .env
 
-ENV DJANGO_PORT=8000 \
-    DJANGO_HOST=localhost \
-    ENVIROMENT=development \
-    CORS_ALLOWED_ORIGINS=http://87.236.23.222,http:astrotech-appspace.space, \
-    PROJECT_DIR=/app \
-    DJANGO_SECRET_KEY=python3manage.pyrunserver
-
 RUN python3 manage.py collectstatic --no-input
 
 RUN chmod 700 -R scripts
